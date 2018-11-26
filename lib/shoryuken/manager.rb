@@ -19,6 +19,10 @@ module Shoryuken
       dispatch_loop
     end
 
+    def stop
+      @running = false
+    end
+
     private
 
     def running?

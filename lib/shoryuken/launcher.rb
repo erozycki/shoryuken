@@ -18,6 +18,8 @@ module Shoryuken
 
       executor.shutdown
 
+      @managers.each(&:stop)
+
       return if executor.wait_for_termination(Shoryuken.options[:timeout])
 
       executor.kill
