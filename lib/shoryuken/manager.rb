@@ -20,7 +20,7 @@ module Shoryuken
     end
 
     def stop
-      @running = false
+      @running.make_false
     end
 
     private
