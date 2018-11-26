@@ -26,6 +26,8 @@ module Shoryuken
     end
 
     def stop
+      @managers.each(&:stop)
+
       fire_event(:quiet, true)
 
       initiate_stop
