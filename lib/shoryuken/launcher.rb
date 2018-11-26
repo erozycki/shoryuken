@@ -14,11 +14,11 @@ module Shoryuken
     end
 
     def stop!
+      @managers.each(&:stop)
+
       initiate_stop
 
       executor.shutdown
-
-      @managers.each(&:stop)
 
       return if executor.wait_for_termination(Shoryuken.options[:timeout])
 
